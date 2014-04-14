@@ -13,13 +13,14 @@ import signal
 
 #Setup variables
 
-speed = 5
+turn = 4
+fwd = 5
 
 def forward():
     pibrella.output.e.on()
     pibrella.output.f.on()
     pibrella.light.red.on()
-    time.sleep(speed)
+    time.sleep(fwd)
     pibrella.output.e.off()
     pibrella.output.f.off()
     pibrella.light.red.off()
@@ -30,7 +31,7 @@ def forward():
 def right():
     pibrella.output.f.on()
     pibrella.light.amber.on()
-    time.sleep(speed)
+    time.sleep(turn)
     pibrella.output.f.off()
     pibrella.light.amber.off()
 
@@ -39,14 +40,19 @@ def right():
 def left():
     pibrella.output.e.on()
     pibrella.light.green.on()
-    time.sleep(speed)
+    time.sleep(turn)
     pibrella.output.e.off()
     pibrella.light.green.off()
 
 
-def button_changed(pin):
+def demo(pin):
     forward()
-    left()
     right()
+    forward()
+    right()
+    forward()
+    right()
+    forward()
+    
 
-pibrella.button.changed(button_changed)
+pibrella.button.changed(demo)
