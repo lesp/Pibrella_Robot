@@ -18,6 +18,8 @@ fwd = 5
 
 #Ultrasonic Sensor Setup
 
+pibrella.output.h.on()
+
 pibrella.output.g.on()
 time.sleep(0.00001)
 pibrella.output.g.off()
@@ -25,6 +27,14 @@ pibrella.output.g.off()
 while pibrella.input.a.on() == 0:
     start = time.time()
 while pibrella.input.a.on() == 1:
+    stop = time.time()
+    pibrella.input.a.off()
+    pibrella.output.h.off()
+
+elapsed = stop - start
+distance = elapsed * 34000
+distance = distance / 2
+
 
 #Setup the functions to easily control our robot
 
