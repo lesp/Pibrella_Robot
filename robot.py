@@ -16,6 +16,18 @@ import signal
 turn = 4
 fwd = 5
 
+#Ultrasonic Sensor Setup
+
+pibrella.output.g.on()
+time.sleep(0.00001)
+pibrella.output.g.off()
+
+while pibrella.input.a.on() == 0:
+    start = time.time()
+while pibrella.input.a.on() == 1:
+
+#Setup the functions to easily control our robot
+
 def forward():
     pibrella.output.e.on()
     pibrella.output.f.on()
