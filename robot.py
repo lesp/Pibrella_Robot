@@ -14,8 +14,8 @@ import easygui as eg
 
 #Setup variables
 
-turn = 4
-fwd = 5
+turn = 2.5
+fwd = 3
 
 #Setup the functions to easily control our robot
 
