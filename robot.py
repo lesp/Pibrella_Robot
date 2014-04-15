@@ -3,6 +3,7 @@ Raspberry Pi Robot.
 Using Pibrella.
 
 Les Pounder 12th April 2014
+Added easygui to the program
 """
 
 #Import libraries
