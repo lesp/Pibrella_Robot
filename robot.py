@@ -10,6 +10,7 @@ Les Pounder 12th April 2014
 import pibrella
 import time
 import signal
+import easygui as eg
 
 #Setup variables
 
@@ -58,3 +59,12 @@ def demo(pin):
     
 
 pibrella.button.changed(demo)
+
+while True:
+    direction = eg.buttonbox(msg='Which direction?',choices=('Left','Forward','Right'))
+    if direction == 'Forward':
+        forward()
+    elif direction == 'Left':
+        right()
+    else:
+        left()
